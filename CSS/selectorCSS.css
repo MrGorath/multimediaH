@@ -1,0 +1,65 @@
+/*
+p {
+    color: blue;   
+}
+
+article p {    
+    color: aqua;    
+}
+
+article > p {
+    color: violet;
+}
+
+article + p {
+    color: brown;    
+}
+
+h1 ~ p {
+    color: seagreen;    
+}
+
+article > * {
+    color: rosybrown;    
+}
+ */
+
+.destacado {
+    color: red;
+}
+
+p.destacado {
+    color: goldenrod;
+}
+
+.error {
+    color: red;
+}
+
+.destacado {
+    font-size: 15px;
+}
+
+.especial {
+    font-weight: bold;
+}
+
+p#destacado {
+    color: blueviolet;
+}
+
+body { margin: 0.5in; }
+ 
+h1 { line-height: 2cm; }
+ 
+p { word-spacing: 4mm; }
+ 
+a { font-size: 12pt }
+ 
+span { font-size: 1pc }
+
+p { color: rgb(71, 98, 176); }
+
+p { color: rgb(27%, 38%, 69%); }
+
+p { color: #4762B0; }

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Javascript</title>
+
+    <script src="funciones.js">
+    </script>
+
+</head>
+
+<body onload="mostrarMensaje('Estoy cargando la pagina jijiji')" onunload="mostrarMensaje('Estoy saliendo jijiji')"
+    onresize="mostrarMensaje('Estoy modificando la ventana jijiji')">
+
+    <form>
+
+        <fieldset>
+
+            <legend>Ingrese tres numeros</legend>
+
+            <label for="txtNumero1">Numero 1</label>
+            <input type="text" value="0" id="txtNumero1" name="txtNumero1"
+                onblur="mostrarMensaje('Adios txtNumero1! He perdido el enfoque jijiji')">
+
+            <br>
+            <br>
+
+            <label for="txtNumero2">Numero 2</label>
+            <input type="text" value="0" id="txtNumero2" name="txtNumero2"
+                onchange="mostrarMensaje('Estoy cambiando jijiji')">
+
+
+            <br>
+            <br>
+
+            <label for="txtNumero3">Numero 3</label>
+            <input type="text" value="0" id="txtNumero3" name="txtNumero3"
+                onfocus="mostrarMensaje('Gane enfoque jijiji')">
+
+        </fieldset>
+        <br>
+        <input type="button" value="Obtener el mayor" name="btnCalcular" onclick="obtenerMayor(
+                parseInt(document.getElementById('txtNumero1').value), 
+                parseInt(document.getElementById('txtNumero2').value), 
+                parseInt(document.getElementById('txtNumero3').value))"
+            onmouseenter="javascript:console.log('Estoy ingresando al boton')"
+            onmouseover="javascript:console.log('A ingresando al boton')"
+            onmouseout="javascript:console.log('Estoy saliendo del boton')">
+    </form>
+
+    <h3>Resultados</h3>
+    <span id="resultado"></span>
+
+    <form>
+
+        <fieldset>
+
+            <legend>Ingrese un numero</legend>
+
+            <label for="txtNumeroX">Numero a multiplicar</label>
+            <input type="text" value="0" id="txtNumeroX" name="txtNumeroX">
+
+        </fieldset>
+
+        <br>
+
+        <input type="button" value="Multiplicar valor" name="btnCalcular" onclick="multiValor(
+                parseInt(document.getElementById('txtNumeroX').value))">
+
+    </form>
+
+    <h3>Resultados</h3>
+    <span id="multiplicacion1"></span>
+    <span id="multiplicacion2"></span>
+    <span id="multiplicacion3"></span>
+    <span id="multiplicacion4"></span>
+    <span id="multiplicacion5"></span>
+    <span id="multiplicacion6"></span>
+    <span id="multiplicacion7"></span>
+    <span id="multiplicacion8"></span>
+    <span id="multiplicacion9"></span>
+    <span id="multiplicacion10"></span>
+
+</body>
+
+</html>

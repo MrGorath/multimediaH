@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
+* {
+    border: 1px solid red;
+}
+
+p {
+    font-family: 'Jost';
+    width: 100px;
+    height: 500px;
+    margin-top: 30px;
+    margin-left: 50px;
+    padding: 5px;
+    border-top-width: 3px;
+    border-top-color: blue;
+    border-top-style: dotted;
+    background-color: brown;
+}
+
+span {
+    width: 100px;
+    display: block;
+    margin: 15px 10px 5px 1px;
+    border-width: 1px 5px 1px 1px;
+    border-color: red blue red red;
+}
+
+body {
+    background-image: url(../imagenes/Waos.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+#pos_relativo{
+    position: relative;
+    bottom: 500px;
+    left: 250px;
+}
+
+h1 {
+    width: 300px;
+    position: absolute;
+    top: 65px;
+    left: 400px;
+}
+
+#principal{
+    width: 90%;
+}
+
+#column_izq{
+    width: 35%;
+    float: left;
+}
+
+#column_der{
+    width: 35%;
+    float: left;
+}
+
+a {
+    vertical-align: auto;
+}
+
+p:first-letter {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: large;
+}
+
+.alternativo {
+    color: #CC0000;
+}
+
+.simple {
+    text-decoration: none;
+}
+
+.importante {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.importante:hover {
+    color: white;
+}
+
+.simple:visited {
+    color: black;
+}
+
+.menuprincipal {
+    width: 80%;
+    border: 8px solid black;
+    display: flex;
+}
+
+.menuopciones {
+    list-style: none;
+}
+
+li.menuopciones a {
+    display: block;
+    width: 100px;
+    float: left;
+}
+
+li.menuopciones a:hover {
+    color: pink;
+    font-size: 20px;
+    background-color: black;
+}
+
+li.menuopciones a:visited {
+    color: blue;
+    font-size: 20px;
+    background-color: red;
+}
