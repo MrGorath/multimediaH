@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Da Game</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+        canvas {
+            border: 5px solid #0f6607;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = 563;
+        canvas.height = 529;
+        document.body.appendChild(canvas);
+
+
+        var FondoR = false;
+        var FondoI = new Image();
+        FondoI.onload = function () {
+            FondoR = true;
+        };
+
+        FondoI.src = "imagenes/Fondo.png";
+
+        var BarreraR = false;
+        var BarreraI = new Image();
+        BarreraI.onload = function () {
+            BarreraR = true;
+        };
+
+        BarreraI.src = "imagenes/Barrera.png";
+
+        var CaballeroR = false;
+        var CaballeroI = new Image();
+       CaballeroI.onload = function () {
+            CaballeroR = true;
+        };
+
+        CaballeroI.src = "imagenes/Caballero.png";
+
+        var GhoulR = false;
+        var GhoulI = new Image();
+        GhoulI.onload = function () {
+            GhoulR = true;
+        };
+
+        GhoulI.src = "imagenes/Ghoul.png";
+
+
+        var Caballero = {
+            speed: 256
+        };
+        var Ghoul = {};
+        var GhoulAtrapado = 0;
+
+
+        var Direccion = {};
+
+        addEventListener("keydown", function (e) {
+            Direccion[e.keyCode] = true;
+        }, false);
+
+        addEventListener("keyup", function (e) {
+            delete Direccion[e.keyCode];
+        }, false);
+
+
+        var reset = function () {
+            Caballero.x = canvas.width / 2;
+            Caballero.y = canvas.height / 2;
+
+
+            Ghoul.x = 32 + (Math.random() * (canvas.width - 64));
+            Ghoul.y = 32 + (Math.random() * (canvas.height - 64));
+        };
+
+
+        var update = function (Modificar) {
+            if (38 in Direccion) {
+                Caballero.y -= Caballero.speed * Modificar;
+            }
+            if (40 in Direccion) {
+                Caballero.y += Caballero.speed * Modificar;
+            }
+            if (37 in Direccion) {
+                Caballero.x -= Caballero.speed * Modificar;
+            }
+            if (39 in Direccion) {
+                Caballero.x += Caballero.speed * Modificar;
+            }
+
+
+            if (
+                Caballero.x <= (Ghoul.x + 32)
+                && Ghoul.x <= (Caballero.x + 32)
+                && Caballero.y <= (Ghoul.y + 32)
+                && Ghoul.y <= (Caballero.y + 32)
+            ) {
+                ++GhoulAtrapado;
+                reset();
+            }
+        };
+
+        var render = function () {
+            
+            if (BarreraR) {
+                ctx.drawImage(BarreraI, 0, 0);
+            }
+
+            if (FondoR) {
+                ctx.drawImage(FondoI, 25, 25);
+            }
+
+            if (CaballeroR) {
+                ctx.drawImage(CaballeroI, Caballero.x, Caballero.y);
+            }
+
+            if (GhoulR) {
+                ctx.drawImage(GhoulI, Ghoul.x, Ghoul.y);
+            }
+
+            ctx.fillStyle = "rgb(250, 250, 250)";
+            ctx.font = "24px Anton sans-serif";
+            ctx.textAlign = "left";
+            ctx.textBaseline = "top";
+            ctx.fillText("Ghouls atrapados : " + GhoulAtrapado, 32, 5);
+        };
+
+        var main = function () {
+            var Ahora = Date.now();
+            var Delta = Ahora - Antes;
+
+            update(Delta / 1000);
+            render();
+
+            Antes = Ahora;
+
+            requestAnimationFrame(main);
+        };
+
+        var Juego = window;
+        requestAnimationFrame = Juego.requestAnimationFrame || Juego.webkitRequestAnimationFrame || Juego.msRequestAnimationFrame || Juego.mozRequestAnimationFrame;
+
+        var Antes = Date.now();
+        reset();
+        main();
+
+    </script>
+
+</body>
+
+</html>

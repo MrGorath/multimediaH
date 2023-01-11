@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 480">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b8734;
+      }
+    </style>
+  </defs>
+  <image width="513" height="480" transform="translate(-.23 .25)" xlink:href="Fondo.png"/>
+  <rect class="cls-1" x="29.05" y="30.36" width="453.9" height="418.83"/>
+</svg>
